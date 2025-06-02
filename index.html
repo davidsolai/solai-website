@@ -1,25 +1,69 @@
-index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Presentación SolAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SolAI - Oferta y Presentación</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+    .fullscreen-logo {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+    }
+    .fullscreen-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    button {
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+  </style>
+  <script>
+    function abrirPDF() {
+      window.open('SolAI_Presentacion_Oficial.pdf', '_blank');
+    }
+  </script>
 </head>
 <body>
-  <h1>Oferta SolAI</h1>
-  <p>Compra 100,000 tokens y regalamos 2,500 tokens. Los primeros 5 millones de tokens disponibles.</p>
+  <div class="fullscreen-logo">
+    <img src="logo.png" alt="Logo SolAI" />
+  </div>
 
-  <button onclick="window.open('SolAI_Presentacion_Oficial.pdf', '_blank')">
-    Ver Presentación y Oferta
-  </button>
+  <div class="content">
+    <h1>Oferta SolAI</h1>
+    <p>Con la compra de 100,000 tokens regalamos 2,500 tokens.</p>
+    <p>Esta oferta aplica para los primeros 5 millones de tokens vendidos.</p>
 
-  <script>
-    // Abre el PDF automáticamente en una pestaña nueva al cargar la página (opcional)
-    window.onload = function() {
-      window.open('SolAI_Presentacion_Oficial.pdf', '_blank');
-    };
-  </script>
-<img src="logo.png" alt="Logo SolAI" style="max-width: 200px; margin-bottom: 20px;" />
-
-ody>
+    <button onclick="abrirPDF()">Ver Presentación y Oferta Completa (PDF)</button>
+  </div>
+</body>
 </html>
+
