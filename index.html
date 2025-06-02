@@ -9,25 +9,40 @@
       margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif; background-color: #fff;
     }
     .fullscreen-logo {
-      height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center; background-color: #fff;
+      height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center;
     }
     .fullscreen-logo img {
       max-width: 100%; max-height: 100%; object-fit: contain;
     }
     .content {
-      padding: 20px; max-width: 800px; margin: 20px auto; text-align: center;
+      padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;
     }
-    button, select {
-      background-color: #0070f3; color: white; border: none; padding: 12px 24px;
-      font-size: 1.1rem; border-radius: 6px; cursor: pointer; margin-top: 20px; transition: background-color 0.3s ease;
+    button, select, input {
+      background-color: #0070f3; color: white; border: none; padding: 12px 20px;
+      font-size: 1rem; border-radius: 6px; cursor: pointer; margin-top: 10px;
     }
     button:hover, select:hover {
       background-color: #005bb5;
     }
     #languageSelector {
-      background-color: #fff; color: #0070f3; border: 2px solid #0070f3; cursor: pointer;
-      padding: 8px 12px; border-radius: 6px; font-size: 1rem; margin-top: 20px;
-      width: 150px;
+      background-color: #fff; color: #0070f3; border: 2px solid #0070f3;
+      padding: 8px 12px; width: 150px; margin-bottom: 20px;
+    }
+    .counter {
+      font-size: 1.2rem; color: #333; margin-top: 20px;
+    }
+    .form-container {
+      max-width: 500px; margin: 40px auto;
+      padding: 20px; border-top: 1px solid #ccc;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%; padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px;
+    }
+    .social {
+      margin-top: 30px;
+    }
+    .social a {
+      text-decoration: none; color: #0070f3; margin: 0 10px; font-weight: bold;
     }
   </style>
 </head>
@@ -37,7 +52,7 @@
   </div>
 
   <div class="content">
-    <select id="languageSelector" aria-label="Selector de idioma">
+    <select id="languageSelector">
       <option value="es" selected>Español</option>
       <option value="en">English</option>
     </select>
@@ -46,7 +61,25 @@
     <p id="offerText1">Con la compra de 100,000 tokens regalamos 2,500 tokens.</p>
     <p id="offerText2">Esta oferta aplica para los primeros 5 millones de tokens vendidos.</p>
 
+    <div class="counter" id="counter">💠 Tokens vendidos hasta ahora: <strong>12,350,000</strong></div>
+
     <button id="openPdfBtn" onclick="abrirPDF()">Ver Presentación y Oferta Completa (PDF)</button>
+
+    <div class="form-container">
+      <h2>Contáctanos</h2>
+      <p>¿Estás interesado en SolAI? Déjanos tus datos y nos pondremos en contacto contigo.</p>
+      <form action="https://formsubmit.co/davidgarcia756@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="social">
+      <p>📢 Comparte nuestro proyecto:</p>
+      <a href="https://twitter.com/intent/tweet?text=Descubre%20el%20token%20SolAI%20en%20https://davidsolai.github.io/solai-website/" target="_blank">Twitter</a>
+      <a href="https://t.me/share/url?url=https://davidsolai.github.io/solai-website/&text=Invierte%20en%20SolAI%20hoy" target="_blank">Telegram</a>
+    </div>
   </div>
 
   <script>
@@ -89,5 +122,6 @@
   </script>
 </body>
 </html>
+
 
 
