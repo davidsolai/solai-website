@@ -10,31 +10,38 @@
       margin: 0;
       background-color: #000;
       color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     header {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 60vh;
       background-color: #000;
+      padding: 10px;
     }
     header img {
       max-width: 100%;
-      height: 100vh;
+      max-height: 100%;
       object-fit: contain;
     }
     section {
       padding: 40px 20px;
       text-align: center;
+      flex: 1;
     }
     .pdf-links a {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
+      margin: 10px 15px;
+      padding: 14px 28px;
       background-color: #1e90ff;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
     .pdf-links a:hover {
       background-color: #3aa0ff;
@@ -44,45 +51,74 @@
       display: block;
       width: 90%;
       max-width: 400px;
-      margin: 10px auto;
-      padding: 10px;
+      margin: 12px auto;
+      padding: 14px;
       border-radius: 6px;
       border: none;
+      font-size: 1rem;
+    }
+    .formulario-section input {
+      background-color: #222;
+      color: #eee;
+    }
+    .formulario-section input::placeholder {
+      color: #bbb;
     }
     .formulario-section button {
       background-color: #28a745;
       color: white;
       font-weight: bold;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     .formulario-section button:hover {
       background-color: #218838;
     }
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 20px;
       background-color: #111;
       color: #aaa;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 30px 10px;
+      }
+      .pdf-links a {
+        margin: 8px 10px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+      .formulario-section input,
+      .formulario-section button {
+        padding: 12px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="SolAI Logo">
+    <img src="logo.png" alt="SolAI Logo" />
   </header>
 
   <section>
     <h2>Presentación Oficial del Token SolAI</h2>
     <div class="pdf-links">
-      <a href="SolAI_Presentacion_Oficial_EN.pdf" target="_blank">Ver PDF en Inglés</a>
-      <a href="SolAI_Presentacion_Oficial_ES.pdf" target="_blank">Ver PDF en Español</a>
+      <a href="SolAI_Presentacion_Oficial_EN.pdf" target="_blank" rel="noopener noreferrer">Ver PDF en Inglés</a>
+      <a href="SolAI_Presentacion_Oficial_ES.pdf" target="_blank" rel="noopener noreferrer">Ver PDF en Español</a>
     </div>
   </section>
 
   <section>
     <h2>🎁 Oferta de lanzamiento</h2>
-    <p>¡Promoción limitada! Por cada compra de 100,000 tokens, regalamos 2,500 tokens extra.<br>Válido hasta completar los primeros 5 millones de tokens vendidos.</p>
+    <p>
+      ¡Promoción limitada! Por cada compra de <strong>100,000 tokens</strong>, regalamos <strong>2,500 tokens</strong> extra.<br />
+      Válido hasta completar los primeros <strong>5 millones de tokens</strong> vendidos.<br />
+      Puedes comprar menos tokens, pero la recompensa aplica solo por cada 100,000 tokens comprados.
+    </p>
   </section>
 
   <section class="formulario-section">
@@ -90,10 +126,13 @@
     <form action="https://formspree.io/f/mwkgrrnp" method="POST">
       <input type="text" name="name" placeholder="Tu nombre" required />
       <input type="email" name="email" placeholder="Tu correo electrónico" required />
-      <input type="number" name="cantidad" placeholder="Cantidad de tokens que deseas comprar" required />
-      <button type="submit">Enviar</button>
+      <input type="number" name="cantidad" placeholder="Cantidad de tokens que deseas comprar" min="1" required />
+      <button type="submit">Enviar solicitud</button>
     </form>
-    <p>💡 Recuerda que puedes enviar SOL a esta dirección de Solana:<br><strong>SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF</strong></p>
+    <p style="margin-top: 20px; font-size: 0.9rem; color: #bbb;">
+      💡 Recuerda que puedes enviar SOL a esta dirección de Solana:<br />
+      <strong>SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF</strong>
+    </p>
   </section>
 
   <footer>
@@ -102,6 +141,7 @@
 
 </body>
 </html>
+
 
 
 
