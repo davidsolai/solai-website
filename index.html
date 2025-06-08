@@ -2,202 +2,107 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SolAI Token</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SolAI - Token en Solana</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0c0c0c;
-      color: #ffffff;
-      text-align: center;
+      background-color: #000;
+      color: #fff;
     }
     header {
-      padding: 40px 20px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
     }
-    img.logo {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-    .buttons {
-      margin: 20px;
-    }
-    .btn {
-      padding: 12px 24px;
-      margin: 10px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      background: #00ffa1;
-      color: #000;
-      cursor: pointer;
-      transition: 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn:hover {
-      background: #00cc80;
-    }
-    .counter {
-      font-size: 32px;
-      margin-top: 30px;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-      100% { transform: scale(1); opacity: 1; }
+    header img {
+      max-width: 100%;
+      height: 100vh;
+      object-fit: contain;
     }
     section {
       padding: 40px 20px;
-      max-width: 700px;
-      margin: auto;
-      text-align: left;
-  <section class="bg-black text-white py-12 text-center">
-  <h2 class="text-4xl font-bold mb-4 text-yellow-400">🎁 Oferta de Lanzamiento</h2>
-  <p class="text-lg mb-2">
-    ¡Compra <strong>100,000 tokens SolAI</strong> y recibe <strong>2,500 tokens adicionales</strong> de regalo!
-  </p>
-  <p class="text-md mb-4 text-gray-300">
-    Promoción válida solo hasta agotar los primeros <strong>5,000,000 tokens</strong>.
-  </p>
-  <div id="promo-counter" class="text-yellow-300 font-mono text-xl mb-4">
-    Tokens promocionales restantes: 5,000,000
-  </div>
-  <div class="bg-gray-800 p-4 rounded-lg mx-auto w-fit mb-4">
-    <p class="text-sm text-yellow-300">Enviar SOL a la siguiente dirección:</p>
-    <p class="text-sm font-mono break-all text-white">
-      SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF
-    </p>
-  </div>
-  <button onclick="navigator.clipboard.writeText('SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF')" 
-          class="bg-yellow-400 hover:bg-yellow-500 animate-pulse text-black font-bold py-3 px-6 rounded-lg transition">
-    📋 Copiar dirección
-  </button>
-  <p class="text-xs text-gray-400 mt-2 flex items-center justify-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12a9 9 0 100-18 9 9 0 000 18z" />
-    </svg>
-    ¡Oferta válida hasta agotar tokens promocionales!
-  </p>
-
-  <script>
-    // Simulación de contador dinámico
-    let tokensRestantes = 5000000;
-    const counterEl = document.getElementById('promo-counter');
-
-    function disminuirTokens(cantidad) {
-      tokensRestantes -= cantidad;
-      if (tokensRestantes < 0) tokensRestantes = 0;
-      counterEl.textContent = 'Tokens promocionales restantes: ' + tokensRestantes.toLocaleString();
-    }
-
-    // Simulación: baja 10,000 tokens cada 10 segundos (puedes quitar esto más adelante)
-    setInterval(() => {
-      disminuirTokens(10000);
-    }, 10000);
-  </script>
-</section>
-
-</section>
-
-    section h2 {
-      color: #00ffa1;
       text-align: center;
     }
-    section p {
-      font-size: 18px;
-      line-height: 1.5;
+    .pdf-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #1e90ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
     }
-    section a.btn {
-      background: #007bff;
-      color: #fff;
-      margin-top: 15px;
+    .pdf-links a:hover {
+      background-color: #3aa0ff;
+    }
+    .formulario-section input,
+    .formulario-section button {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+    .formulario-section button {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .formulario-section button:hover {
+      background-color: #218838;
     }
     footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #888;
-    }
-    @media (max-width: 600px) {
-      .btn {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin: 8px;
-      }
-      section {
-        padding: 20px 10px;
-      }
+      text-align: center;
+      padding: 30px;
+      background-color: #111;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="SolAI Logo" class="logo" />
-    <h1>Bienvenido a SolAI</h1>
-    <p>Tu token de inteligencia artificial en la blockchain de Solana</p>
-
-    <div class="buttons">
-      <button class="btn" onclick="location.href='#espanol'">Ver en Español 🇪🇸</button>
-      <button class="btn" onclick="location.href='#english'">View in English 🇬🇧</button>
-    </div>
-
-    <div class="counter">
-      🔔 Tokens restantes: <span id="tokens">17,650,000</span> SOLAI
-    </div>
+    <img src="logo.png" alt="SolAI Logo">
   </header>
 
-  <section id="espanol">
-    <h2>¿Qué es SolAI?</h2>
-    <p>SolAI es un token creado en la red Solana diseñado para recompensar a los usuarios, permitir intercambios rápidos y brindar acceso a herramientas de análisis con inteligencia artificial.</p>
-    <a href="SolAI_Presentacion_Oficial_ES.pdf" download class="btn">
-      Descargar Presentación en Español 📄
-    </a>
-  </section>
-
-  <section id="english">
-    <h2>What is SolAI?</h2>
-    <p>SolAI is a token built on the Solana blockchain designed to reward users, enable fast exchanges, and offer access to artificial intelligence analysis tools.</p>
-    <a href="SolAI_Presentacion_Oficial_EN.pdf" download class="btn">
-      Download Presentation in English 📄
-    </a>
-  </section>
-<section class="bg-black text-white py-12 text-center">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-4xl font-bold mb-4">🎁 Oferta de Lanzamiento</h2>
-    <p class="text-lg mb-4">
-      ¡Compra <strong>100,000 SOLAI</strong> y recibe <strong>2,500 tokens extra</strong>! Solo válido para los primeros <strong>5 millones</strong> vendidos.
-    </p>
-    <div class="text-2xl font-bold mb-4" id="contador">Quedan: 5,000,000 SOLAI</div>
-    <p class="mb-4">Envío de pago a la siguiente dirección de Solana (Phantom Wallet):</p>
-    <div class="bg-gray-800 p-4 rounded-lg inline-block">
-      <code id="direccion">SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF</code>
-      <button onclick="copiarDireccion()" class="ml-4 px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">Copiar</button>
+  <section>
+    <h2>Presentación Oficial del Token SolAI</h2>
+    <div class="pdf-links">
+      <a href="SolAI_Presentacion_Oficial_EN.pdf" target="_blank">Ver PDF en Inglés</a>
+      <a href="SolAI_Presentacion_Oficial_ES.pdf" target="_blank">Ver PDF en Español</a>
     </div>
-    <p class="mt-6 text-yellow-400 font-semibold text-lg">⏳ ¡Oferta por tiempo limitado!</p>
-  </div>
+  </section>
 
-  <script>
-    let tokensRestantes = 5000000;
-    function copiarDireccion() {
-      const direccion = document.getElementById("direccion").innerText;
-      navigator.clipboard.writeText(direccion).then(() => {
-        alert("Dirección copiada al portapapeles");
-      });
-    }
-    function actualizarContador() {
-      document.getElementById("contador").innerText = "Quedan: " + tokensRestantes.toLocaleString() + " SOLAI";
-    }
-    actualizarContador();
-  </script>
-</section>
+  <section>
+    <h2>🎁 Oferta de lanzamiento</h2>
+    <p>¡Promoción limitada! Por cada compra de 100,000 tokens, regalamos 2,500 tokens extra.<br>Válido hasta completar los primeros 5 millones de tokens vendidos.</p>
+  </section>
+
+  <section class="formulario-section">
+    <h2>📝 ¿Quieres comprar SolAI?</h2>
+    <form action="https://formspree.io/f/mwkgrrnp" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <input type="number" name="cantidad" placeholder="Cantidad de tokens que deseas comprar" required />
+      <button type="submit">Enviar</button>
+    </form>
+    <p>💡 Recuerda que puedes enviar SOL a esta dirección de Solana:<br><strong>SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF</strong></p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 SolAI Token. Todos los derechos reservados.</p>
+    &copy; 2025 SolAI | Proyecto conjunto David García + ChatGPT 🤝
   </footer>
+
 </body>
 </html>
+
 
 
 
