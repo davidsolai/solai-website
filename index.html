@@ -163,6 +163,35 @@
       Download Presentation in English 📄
     </a>
   </section>
+<section class="bg-black text-white py-12 text-center">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-4">🎁 Oferta de Lanzamiento</h2>
+    <p class="text-lg mb-4">
+      ¡Compra <strong>100,000 SOLAI</strong> y recibe <strong>2,500 tokens extra</strong>! Solo válido para los primeros <strong>5 millones</strong> vendidos.
+    </p>
+    <div class="text-2xl font-bold mb-4" id="contador">Quedan: 5,000,000 SOLAI</div>
+    <p class="mb-4">Envío de pago a la siguiente dirección de Solana (Phantom Wallet):</p>
+    <div class="bg-gray-800 p-4 rounded-lg inline-block">
+      <code id="direccion">SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF</code>
+      <button onclick="copiarDireccion()" class="ml-4 px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">Copiar</button>
+    </div>
+    <p class="mt-6 text-yellow-400 font-semibold text-lg">⏳ ¡Oferta por tiempo limitado!</p>
+  </div>
+
+  <script>
+    let tokensRestantes = 5000000;
+    function copiarDireccion() {
+      const direccion = document.getElementById("direccion").innerText;
+      navigator.clipboard.writeText(direccion).then(() => {
+        alert("Dirección copiada al portapapeles");
+      });
+    }
+    function actualizarContador() {
+      document.getElementById("contador").innerText = "Quedan: " + tokensRestantes.toLocaleString() + " SOLAI";
+    }
+    actualizarContador();
+  </script>
+</section>
 
   <footer>
     <p>&copy; 2025 SolAI Token. Todos los derechos reservados.</p>
