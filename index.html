@@ -2,13 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SolAI Token</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0c0c0c;
       color: #ffffff;
       text-align: center;
@@ -33,6 +32,8 @@
       color: #000;
       cursor: pointer;
       transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
     .btn:hover {
       background: #00cc80;
@@ -47,10 +48,39 @@
       50% { transform: scale(1.1); opacity: 0.8; }
       100% { transform: scale(1); opacity: 1; }
     }
+    section {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+      text-align: left;
+    }
+    section h2 {
+      color: #00ffa1;
+      text-align: center;
+    }
+    section p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    section a.btn {
+      background: #007bff;
+      color: #fff;
+      margin-top: 15px;
+    }
     footer {
       margin-top: 60px;
       font-size: 14px;
       color: #888;
+    }
+    @media (max-width: 600px) {
+      .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 8px;
+      }
+      section {
+        padding: 20px 10px;
+      }
     }
   </style>
 </head>
@@ -70,28 +100,28 @@
     </div>
   </header>
 
-  <section id="espanol" style="padding: 40px 20px;">
+  <section id="espanol">
     <h2>¿Qué es SolAI?</h2>
     <p>SolAI es un token creado en la red Solana diseñado para recompensar a los usuarios, permitir intercambios rápidos y brindar acceso a herramientas de análisis con inteligencia artificial.</p>
+    <a href="SolAI_Presentacion_Oficial_ES.pdf" download class="btn">
+      Descargar Presentación en Español 📄
+    </a>
   </section>
 
-  <section id="english" style="padding: 40px 20px;">
+  <section id="english">
     <h2>What is SolAI?</h2>
     <p>SolAI is a token built on the Solana blockchain designed to reward users, enable fast exchanges, and offer access to artificial intelligence analysis tools.</p>
+    <a href="SolAI_Presentacion_Oficial_EN.pdf" download class="btn">
+      Download Presentation in English 📄
+    </a>
   </section>
 
   <footer>
     <p>&copy; 2025 SolAI Token. Todos los derechos reservados.</p>
   </footer>
-
-  <script>
-    // Aquí podrías actualizar el número de tokens en tiempo real si quieres usar JS dinámico más adelante
-    // Por ahora está fijo en 17,650,000 (quedan por vender)
-  </script>
 </body>
 </html>
 
-</html>
 
 
 
