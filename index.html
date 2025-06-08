@@ -46,6 +46,34 @@
     .pdf-links a:hover {
       background-color: #3aa0ff;
     }
+    #compra-solai button {
+      padding: 15px 30px;
+      font-size: 1.3em;
+      background-color: #0077ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 20px auto;
+      display: block;
+    }
+    #compra-solai button:hover {
+      background-color: #005fcc;
+    }
+    #instruccionesCompra {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1em;
+      background: #111f33;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
     .formulario-section input,
     .formulario-section button {
       display: block;
@@ -80,6 +108,7 @@
       background-color: #111;
       color: #aaa;
       font-size: 0.9rem;
+      margin-top: auto;
     }
     @media (max-width: 600px) {
       section {
@@ -94,6 +123,10 @@
       .formulario-section button {
         padding: 12px;
         font-size: 0.9rem;
+      }
+      #compra-solai button {
+        font-size: 1.1em;
+        padding: 12px 20px;
       }
     }
   </style>
@@ -117,20 +150,50 @@
     <p>
       ¡Promoción limitada! Por cada compra de <strong>100,000 tokens</strong>, regalamos <strong>2,500 tokens</strong> extra.<br />
       Válido hasta completar los primeros <strong>5 millones de tokens</strong> vendidos.<br />
-      Puedes comprar menos tokens, pero la recompensa aplica solo por cada 100,000 tokens comprados.
+      Puedes comprar menos tokens, pero la recompensa aplica por cada 100,000 tokens comprados.
     </p>
   </section>
+
+  <!-- Sección de compra rápida -->
+  <section id="compra-solai">
+    <button id="btnComprar">Comprar SOLAI ahora</button>
+    <div id="instruccionesCompra">
+      <p><strong>Instrucciones para comprar SOLAI:</strong></p>
+      <ol>
+        <li>Abre tu wallet Phantom en el navegador o app móvil.</li>
+        <li>Envía la cantidad deseada de <strong>SOL (Solana)</strong> a esta dirección:</li>
+        <p style="word-break: break-all; font-weight: bold; color: #00d4ff;">SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF</p>
+        <li>Recuerda que por cada 100,000 tokens SOLAI comprados, recibes 2,500 tokens extra (ej. 300,000 → 7,500 gratis).</li>
+        <li>Después de enviar el pago, completa el formulario de contacto justo debajo para enviarte tus tokens.</li>
+      </ol>
+    </div>
+  </section>
+
+  <script>
+    const btnComprar = document.getElementById('btnComprar');
+    const instrucciones = document.getElementById('instruccionesCompra');
+    btnComprar.addEventListener('click', () => {
+      if (instrucciones.style.display === 'none' || instrucciones.style.display === '') {
+        instrucciones.style.display = 'block';
+        btnComprar.textContent = 'Cerrar instrucciones';
+      } else {
+        instrucciones.style.display = 'none';
+        btnComprar.textContent = 'Comprar SOLAI ahora';
+      }
+    });
+  </script>
 
   <section class="formulario-section">
     <h2>📝 ¿Quieres comprar SolAI?</h2>
     <form action="https://formspree.io/f/mwkgrrnp" method="POST">
       <input type="text" name="name" placeholder="Tu nombre" required />
       <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <input type="text" name="wallet" placeholder="Tu dirección Phantom" required />
       <input type="number" name="cantidad" placeholder="Cantidad de tokens que deseas comprar" min="1" required />
       <button type="submit">Enviar solicitud</button>
     </form>
     <p style="margin-top: 20px; font-size: 0.9rem; color: #bbb;">
-      💡 Recuerda que puedes enviar SOL a esta dirección de Solana:<br />
+      💡 Recuerda enviar SOL a la dirección:<br />
       <strong>SJq73vevUghu1bBimH6ZD15gS4d3gvYokUbW9zV1qBF</strong>
     </p>
   </section>
@@ -141,7 +204,6 @@
 
 </body>
 </html>
-
 
 
 
