@@ -2,125 +2,95 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SolAI - Oferta y Presentación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SolAI Token</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    html, body {
-      margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif; background-color: #fff;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0c0c0c;
+      color: #ffffff;
+      text-align: center;
     }
-    .fullscreen-logo {
-      height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center;
+    header {
+      padding: 40px 20px 20px;
     }
-    .fullscreen-logo img {
-      max-width: 100%; max-height: 100%; object-fit: contain;
+    img.logo {
+      max-width: 300px;
+      margin-bottom: 20px;
     }
-    .content {
-      padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;
+    .buttons {
+      margin: 20px;
     }
-    button, select, input {
-      background-color: #0070f3; color: white; border: none; padding: 12px 20px;
-      font-size: 1rem; border-radius: 6px; cursor: pointer; margin-top: 10px;
+    .btn {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #00ffa1;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    button:hover, select:hover {
-      background-color: #005bb5;
-    }
-    #languageSelector {
-      background-color: #fff; color: #0070f3; border: 2px solid #0070f3;
-      padding: 8px 12px; width: 150px; margin-bottom: 20px;
+    .btn:hover {
+      background: #00cc80;
     }
     .counter {
-      font-size: 1.2rem; color: #333; margin-top: 20px;
-    }
-    .form-container {
-      max-width: 500px; margin: 40px auto;
-      padding: 20px; border-top: 1px solid #ccc;
-    }
-    input[type="text"], input[type="email"] {
-      width: 100%; padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px;
-    }
-    .social {
+      font-size: 32px;
       margin-top: 30px;
+      animation: pulse 2s infinite;
     }
-    .social a {
-      text-decoration: none; color: #0070f3; margin: 0 10px; font-weight: bold;
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="fullscreen-logo">
-    <img src="logo.png" alt="Logo SolAI" />
-  </div>
+  <header>
+    <img src="logo.png" alt="SolAI Logo" class="logo" />
+    <h1>Bienvenido a SolAI</h1>
+    <p>Tu token de inteligencia artificial en la blockchain de Solana</p>
 
-  <div class="content">
-    <select id="languageSelector">
-      <option value="es" selected>Español</option>
-      <option value="en">English</option>
-    </select>
-
-    <h1 id="offerTitle">Oferta SolAI</h1>
-    <p id="offerText1">Con la compra de 100,000 tokens regalamos 2,500 tokens.</p>
-    <p id="offerText2">Esta oferta aplica para los primeros 5 millones de tokens vendidos.</p>
-
-    <div class="counter" id="counter">💠 Tokens vendidos hasta ahora: <strong>12,350,000</strong></div>
-
-    <button id="openPdfBtn" onclick="abrirPDF()">Ver Presentación y Oferta Completa (PDF)</button>
-
-    <div class="form-container">
-      <h2>Contáctanos</h2>
-      <p>¿Estás interesado en SolAI? Déjanos tus datos y nos pondremos en contacto contigo.</p>
-      <form action="https://formsubmit.co/davidgarcia756@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <input type="hidden" name="_captcha" value="false">
-        <button type="submit">Enviar</button>
-      </form>
+    <div class="buttons">
+      <button class="btn" onclick="location.href='#espanol'">Ver en Español 🇪🇸</button>
+      <button class="btn" onclick="location.href='#english'">View in English 🇬🇧</button>
     </div>
-    <div class="social">
-      <p>📢 Comparte nuestro proyecto:</p>
-      <a href="https://twitter.com/intent/tweet?text=Descubre%20el%20token%20SolAI%20en%20https://davidsolai.github.io/solai-website/" target="_blank">Twitter</a>
-      <a href="https://t.me/share/url?url=https://davidsolai.github.io/solai-website/&text=Invierte%20en%20SolAI%20hoy" target="_blank">Telegram</a>
+
+    <div class="counter">
+      🔔 Tokens restantes: <span id="tokens">17,650,000</span> SOLAI
     </div>
-  </div>
+  </header>
+
+  <section id="espanol" style="padding: 40px 20px;">
+    <h2>¿Qué es SolAI?</h2>
+    <p>SolAI es un token creado en la red Solana diseñado para recompensar a los usuarios, permitir intercambios rápidos y brindar acceso a herramientas de análisis con inteligencia artificial.</p>
+  </section>
+
+  <section id="english" style="padding: 40px 20px;">
+    <h2>What is SolAI?</h2>
+    <p>SolAI is a token built on the Solana blockchain designed to reward users, enable fast exchanges, and offer access to artificial intelligence analysis tools.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SolAI Token. Todos los derechos reservados.</p>
+  </footer>
 
   <script>
-    const texts = {
-      es: {
-        offerTitle: "Oferta SolAI",
-        offerText1: "Con la compra de 100,000 tokens regalamos 2,500 tokens.",
-        offerText2: "Esta oferta aplica para los primeros 5 millones de tokens vendidos.",
-        pdfFile: "SolAI_Presentacion_Oficial_ES.pdf",
-        btnText: "Ver Presentación y Oferta Completa (PDF)"
-      },
-      en: {
-        offerTitle: "SolAI Offer",
-        offerText1: "Buy 100,000 tokens and get 2,500 tokens free.",
-        offerText2: "This offer applies to the first 5 million tokens sold.",
-        pdfFile: "SolAI_Presentacion_Oficial_EN.pdf",
-        btnText: "View Full Presentation and Offer (PDF)"
-      }
-    };
-
-    const languageSelector = document.getElementById("languageSelector");
-    const offerTitle = document.getElementById("offerTitle");
-    const offerText1 = document.getElementById("offerText1");
-    const offerText2 = document.getElementById("offerText2");
-    const openPdfBtn = document.getElementById("openPdfBtn");
-
-    function abrirPDF() {
-      const lang = languageSelector.value;
-      const file = texts[lang].pdfFile;
-      window.open(file, "_blank");
-    }
-
-    languageSelector.addEventListener("change", () => {
-      const lang = languageSelector.value;
-      offerTitle.textContent = texts[lang].offerTitle;
-      offerText1.textContent = texts[lang].offerText1;
-      offerText2.textContent = texts[lang].offerText2;
-      openPdfBtn.textContent = texts[lang].btnText;
-    });
+    // Aquí podrías actualizar el número de tokens en tiempo real si quieres usar JS dinámico más adelante
+    // Por ahora está fijo en 17,650,000 (quedan por vender)
   </script>
 </body>
+</html>
+
 </html>
 
 
